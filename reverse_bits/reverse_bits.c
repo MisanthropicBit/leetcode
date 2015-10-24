@@ -9,11 +9,15 @@ If this function is called many times, how would you optimize it?*/
 #include <stdint.h>
 
 uint32_t reverseBits(uint32_t n) {
-    /* EXPLAIN! */
+    // Swap every second bit
     n = ((n >> 1) & 0x55555555u) | ((n & 0x55555555u) << 1);
+    // Swap every pair of 2 bits (16 pairs in total)
     n = ((n >> 2) & 0x33333333u) | ((n & 0x33333333u) << 2);
+    // Swap every pair of 4 bits (8 pairs in total)
     n = ((n >> 4) & 0x0f0f0f0fu) | ((n & 0x0f0f0f0fu) << 4);
+    // Swap every pair of 8 bits (4 pairs in total)
     n = ((n >> 8) & 0x00ff00ffu) | ((n & 0x00ff00ffu) << 8);
+    // Swap every pair of 16 bits (2 pairs in total)
     n = ((n >> 16) & 0xffffu) | ((n & 0xffffu) << 16);
 
     return n;
