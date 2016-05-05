@@ -54,38 +54,6 @@ int lengthOfLastWord(const char* s) {
     return (s == beg ? 0 : s - beg);
 }
 
-/*int lengthOfLastWord(const char* s) {*/
-/*    if (!s) {*/
-/*        return 0;*/
-/*    }*/
-
-/*    // Detect strings consisting entirely of whitespace*/
-/*    s = skip_whitespace(s);*/
-/*    if (s == '\0') {*/
-/*        return 0;*/
-/*    }*/
-
-/*    const char* last_space = s;*/
-
-/*    while (*s != '\0') {*/
-/*        if (*s == ' ') {*/
-/*            const char* last_pos = s;*/
-/*            s = skip_whitespace(s++);*/
-
-/*            if (*s == '\0') {*/
-/*                s = last_pos;*/
-/*                break;*/
-/*            } else {*/
-/*                last_space = last_pos;*/
-/*            }*/
-/*        }*/
-
-/*        ++s;*/
-/*    }*/
-
-/*    return last_space ? (s - last_space - 1) : 0;*/
-/*}*/
-
 int main() {
     const char* const a = "uroi rsoihrg rsoibsgr oubsrg ohsrg";
     const char* const b = "It is fun and educational to program";

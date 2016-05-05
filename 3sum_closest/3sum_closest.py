@@ -25,19 +25,15 @@ class Solution:
             while j < k:
                 s = num[i] + num[j] + num[k]
                 ds = target - s
-                #print "{} + {} + {} = {}".format(num[i], num[j], num[k], s)
 
                 if abs(ds) < diff:
                     r = s
                     diff = abs(ds)
 
-                #print s, ds
                 if s < target:
                     j += 1
-                    #print "j:", j
                 elif s > target:
                     k -= 1
-                    #print "k:", k
                 else:
                     # We found the answer (although there may be more)
                     return target
@@ -57,7 +53,7 @@ if __name__ == '__main__':
     r = s.threeSumClosest([1, 2, 4, 8, 16, 32, 64, 128],  82)
     print "Closest sum to {} is {}".format(82, r)
     assert r == 82
-    
+
     # Check result with a random list of numbers
     l = [random.randrange(-1000, 1000) for i in range(100)]
     i, j, k, v = 0, 0, 0, random.randrange(-2997, 2998)
